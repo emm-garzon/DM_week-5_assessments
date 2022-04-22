@@ -31,12 +31,7 @@ module.exports = {
                 rating INT,
                 country_id INT NOT NULL REFERENCES countries(country_id)
             );
-
-            INSERT INTO cities (name, rating, country_id)
-            VALUES ('Manila', 3, 139),
-            ('Tokyo', 5, 86),
-            ('Rome', 4, 84);
-
+            
             insert into countries (name)
             values ('Afghanistan'),
             ('Albania'),
@@ -233,7 +228,12 @@ module.exports = {
             ('Yemen'),
             ('Zambia'),
             ('Zimbabwe');
-        `
+
+            INSERT INTO cities (name, rating, country_id)
+            VALUES ('Manila', 3, 139),
+            ('Tokyo', 5, 86),
+            ('Rome', 4, 84);
+            `
       )
       .then(() => {
         console.log("DB seeded!");
